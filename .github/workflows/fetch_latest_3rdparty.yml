@@ -1,0 +1,10 @@
+name: Fetch 3rd-party versions
+on: workflow-dispatch
+jobs:
+  fetch3rdparty:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+      - name: Fetch master files
+        uses: gleich/gh_fsync@master
