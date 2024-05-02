@@ -6,5 +6,7 @@ jobs:
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v2
+      - name: Make Safe
+        run: git config --global --add safe.directory /github/workspace
       - name: Fetch master files
         uses: gleich/gh_fsync@master
