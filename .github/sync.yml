@@ -1,6 +1,6 @@
 # config file for file-synching into other repos
 pp-mo/test_sync_target:
-  - source: workflows/sample_file_1.txt
+  - source: .github/workflows/sample_file_1.txt
     dest: ./synched_files/sample_file_1.txt
-  - source: workflows/sample_file_2.txt
+  - source: .github/workflows/sample_file_2.txt
     dest: ./synched_files/sample_file_2.txt
