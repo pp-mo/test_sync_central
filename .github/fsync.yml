@@ -1,6 +1,0 @@
-# config for file fetching with "gh_fsync"
-# See: https://github.com/marketplace/actions/gh_fsync
-files:
-  - path: master_templates/sample_file_1.txt
-    source: https://github.com/pp-mo/test_sync_3rdparty/raw/main/master_template1.txt
-

@@ -6,7 +6,14 @@ jobs:
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
-      - name: Make Safe
-        run: git config --global --add safe.directory /github/workspace
-      - name: Fetch master files
-        uses: gleich/gh_fsync@master
+      - name: Update templates from master location
+        run: |
+          wget https://github.com/pp-mo/test_sync_3rdparty/raw/main/master_template1.txt -O ./master_templates/sample_file_1.txt
+      - name: Create update PR
+        uses: peter-evans/create-pull-request@v6
+        with:
+          token: ${{ secrets.SYNCTEST_PAT }}
+          git-token: ${{ secrets.SYNCTEST_PAT }}
+          branch: staged_master_updates
+          commit-message: Template updates from master locations
+
